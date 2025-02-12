@@ -1,0 +1,129 @@
+@use './scss/' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 100%;
+
+  @include extra-large-screen {
+    font-size: 100%;
+  }
+
+  @include large-screen {
+    font-size: 90%;
+  }
+
+  @include tablet {
+    font-size: 80%;
+  }
+
+  @include small-tablet {
+    font-size: 70%;
+  }
+
+  @include mobile {
+    font-size: 60%;
+  }
+}
+
+body {
+  font-family: $font-family !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+
+  background-color: $body-bg !important;
+  color: $txt-color !important;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+button,
+input {
+  outline: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+.container {
+  min-width: 100%;
+  flex-grow: 1;
+}
+
+.detail-container {
+  max-width: 80%;
+  @include large-screen {
+    min-width: 100%;
+  }
+  margin: auto;
+}
+
+//a
+.media-a {
+  text-decoration: none;
+  color: #ffffff !important;
+}
+
+//a:hover
+@media (hover: hover) {
+  .media-a:hover {
+    color: $main-color !important;
+  }
+}
+
+//h2
+.media-h2 {
+  display: block;
+  font-size: 3em;
+  @include extra-large-screen {
+    font-size: 1.5em;
+  }
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.list-no-item-single {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 8rem 0 5rem;
+  font-size: 3rem;
+  @include extra-large-screen {
+    padding: 4rem 0 1rem;
+    font-size: 1.5rem;
+  }
+
+  :is(img) {
+    @include large-screen {
+      width: 80px;
+      height: 80px;
+    }
+    width: 120px;
+    height: 120px;
+  }
+  // height: 60vh;
+  @media (orientation: portrait) {
+    height: 60vh;
+  }
+}

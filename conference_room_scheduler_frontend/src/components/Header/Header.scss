@@ -1,0 +1,167 @@
+@use '../../scss/' as *;
+
+.media-logo-header {
+  font-size: 5rem;
+  font-weight: 600;
+
+  @include flex(center, unset);
+
+  @media only screen and (max-width: 2200px) {
+    font-size: 4rem;
+  }
+  @include extra-large-screen {
+    font-size: 2.5rem;
+  }
+  @media only screen and (max-width: 904px) {
+    font-size: 2.4rem;
+  }
+  @media only screen and (max-width: 876px) {
+    font-size: 2.3rem;
+  }
+  @media only screen and (max-width: 850px) {
+    font-size: 2.2rem;
+  }
+  @media only screen and (max-width: 824px) {
+    font-size: 2.1rem;
+  }
+  @media only screen and (max-width: 798px) {
+    font-size: 2rem;
+  }
+  @media only screen and (max-width: 770px) {
+    font-size: 1.9rem;
+  }
+
+  img {
+    margin-right: 20px;
+    width: 100px;
+
+    @include extra-large-screen {
+      margin-right: 10px;
+      width: 50px;
+    }
+
+    @include mobile {
+      width: 30px;
+      margin-right: 2;
+    }
+  }
+}
+
+.media-header {
+  height: $header-height-max;
+  @include extra-large-screen {
+    height: $header-height;
+  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  transition:
+    height 0.3s ease,
+    background-color 0.3s ease;
+
+  &.shrink {
+    height: $header-shrink-height-max;
+    @include extra-large-screen {
+      height: $header-shrink-height;
+    }
+    background-color: $body-bg;
+  }
+
+  &__wrap {
+    @include flex(center, space-between);
+    height: 100%;
+    padding: 0 4rem;
+    @include extra-large-screen {
+      padding: 0 2rem;
+    }
+
+    @include small-tablet {
+      justify-content: center;
+    }
+  }
+
+  &__nav {
+    @include flex(center, unset);
+    margin-bottom: 0rem;
+    list-style-type: none;
+
+    & > * ~ * {
+      margin-left: 4rem;
+      @include extra-large-screen {
+        margin-left: 2rem;
+      }
+    }
+
+    .navlink {
+      padding: 10px 0;
+      font-weight: 700;
+      position: relative;
+      font-size: 3rem;
+
+      @media only screen and (max-width: 2200px) {
+        font-size: 2.5rem;
+      }
+      @include extra-large-screen {
+        font-size: 1.5rem;
+        padding: 5px 0;
+      }
+      @media only screen and (max-width: 904px) {
+        font-size: 1.4rem;
+      }
+      @media only screen and (max-width: 876px) {
+        font-size: 1.3rem;
+      }
+      @media only screen and (max-width: 850px) {
+        font-size: 1.2rem;
+      }
+      @media only screen and (max-width: 824px) {
+        font-size: 1.1rem;
+      }
+      @media only screen and (max-width: 798px) {
+        font-size: 1rem;
+      }
+      @media only screen and (max-width: 770px) {
+        font-size: 0.9rem;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        transition: width 0.5s ease;
+        height: 4px;
+        @include extra-large-screen {
+          height: 2px;
+        }
+        background-color: $main-color;
+      }
+
+      &.active::after,
+      &:hover::after {
+        width: 100%;
+      }
+    }
+
+    @include small-tablet {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      height: 5rem;
+      width: 100%;
+      background-color: $body-bg;
+      padding: 0 2rem;
+      box-shadow: $box-shadow;
+
+      @include flex(center, space-between);
+
+      & > * ~ * {
+        margin-left: 0;
+      }
+    }
+  }
+}

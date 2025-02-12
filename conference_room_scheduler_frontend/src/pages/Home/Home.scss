@@ -1,0 +1,25 @@
+@use '../../scss/' as *;
+
+.table-row {
+  align-content: center;
+}
+
+.table-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.pagination-buttons {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.create-booking-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.create-booking-button {
+  margin-bottom: 20px;
+}

@@ -1,0 +1,11 @@
+@use '../../scss/' as *;
+
+.submit-button {
+  display: flex;
+  justify-content: center;
+}
+
+.invalid-message {
+  margin-bottom: 20px;
+  color: red;
+}

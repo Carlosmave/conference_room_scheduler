@@ -1,0 +1,129 @@
+@use '../../scss/' as *;
+
+.media-logo-footer {
+  font-size: 5rem;
+  font-weight: 600;
+  z-index: 99;
+
+  @include flex(center, unset);
+
+  @media only screen and (max-width: 2200px) {
+    font-size: 4rem;
+  }
+  @include extra-large-screen {
+    font-size: 2.5rem;
+  }
+  @media only screen and (max-width: 904px) {
+    font-size: 2.4rem;
+  }
+  @media only screen and (max-width: 876px) {
+    font-size: 2.3rem;
+  }
+  @media only screen and (max-width: 850px) {
+    font-size: 2.2rem;
+  }
+  @media only screen and (max-width: 824px) {
+    font-size: 2.1rem;
+  }
+  @media only screen and (max-width: 798px) {
+    font-size: 2rem;
+  }
+  @media only screen and (max-width: 770px) {
+    font-size: 1.9rem;
+  }
+
+  img {
+    margin-right: 20px;
+    width: 100px;
+
+    @include extra-large-screen {
+      margin-right: 10px;
+      width: 50px;
+    }
+
+    @include mobile {
+      width: 30px;
+      margin-right: 2;
+    }
+  }
+}
+
+.media-footer {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include overlay();
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to bottom, $body-bg, rgba($black, 0));
+  }
+
+  padding: 12rem 4rem;
+  @include extra-large-screen {
+    padding: 6rem 2rem;
+  }
+
+  &__content {
+    max-width: 2000px;
+    @include extra-large-screen {
+      max-width: 1000px;
+    }
+
+    &__logo {
+      @include flex(center, center);
+      @include extra-large-screen {
+      }
+    }
+
+    &__menus {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      @include extra-large-screen {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @include mobile {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    &__menu {
+      @include flex(flex-start, flex-start);
+      flex-direction: column;
+      font-weight: 600;
+      margin-top: 2rem;
+      font-size: 3rem;
+      margin: auto;
+      @include extra-large-screen {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+      }
+
+      & > * {
+        margin: auto;
+      }
+
+      & > * ~ * {
+        margin-top: 2rem;
+        @include extra-large-screen {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+}

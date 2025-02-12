@@ -1,0 +1,42 @@
+@use '../../scss/' as *;
+
+.page-header {
+  padding: $header-height-max 0 4rem;
+  margin-bottom: 4rem;
+
+  @include extra-large-screen {
+    padding: $header-height 0 2rem;
+    margin-bottom: 2rem;
+  }
+
+  text-align: center;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  h2 {
+    position: relative;
+    z-index: 99;
+    font-weight: bold;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include overlay();
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to top, $body-bg, rgba($black, 0));
+  }
+}

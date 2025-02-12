@@ -1,0 +1,11 @@
+[
+   {
+      "model": "booking.booking",
+      "pk": 1,
+      "fields": {
+          "name": "Test Booking",
+          "start_date_time": "2025-03-12 05:00:00",
+          "end_date_time": "2025-03-12 06:00:00"
+      }
+  }
+]
